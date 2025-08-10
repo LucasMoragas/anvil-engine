@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "anvil-engine"
+version = "0.1.0"
+description = "Anvil Engine - A backend service demonstrating the Factory pattern for RPG character creation and management. Focuses on software architecture and design patterns implementation."
+authors = ["Lucas Moragas <lucas.moragas@example.com>"]
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+packages = [{include = "anvil_engine", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+fastapi = ">=0.116.1,<0.117.0"
+uvicorn = ">=0.35.0,<0.36.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+ruff = "^0.12.8"
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "A", "C4", "UP", "ARG", "SIM", "TCH", "Q", "FLY", "PERF", "RUF"]
+ignore = ["E501", "B008", "C901"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["anvil_engine"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests"
+]
+
