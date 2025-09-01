@@ -2,9 +2,8 @@
 name = "anvil-engine"
 version = "0.1.0"
 description = "Anvil Engine - A backend service demonstrating the Factory pattern for RPG character creation and management. Focuses on software architecture and design patterns implementation."
-authors = ["Lucas Moragas <lucas.moragas@example.com>"]
+authors = ["Lucas Moragas Melo Oliveira <moragaslucas08@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13,<3.14"
 packages = [{include = "anvil_engine", from = "src"}]
 
 [tool.poetry.dependencies]
